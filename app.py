@@ -8,13 +8,13 @@ def index():
       namaDepan = request.form['namaDepan']
       namaBelakang = request.form['namaBelakang']
       nama = '%s %s' % (namaDepan, namaBelakang)
-      p=nama
+      p = nama
       C = ' '
-      k=3
+      k = 3
       for i in range(len(p)):
          c = chr(ord(p[i]) + k)
          C = C + c
-      return render_template('response.html', nama=nama)
+      return render_template('response.html', nama_asli=nama, nama_terenkripsi=C)
    return render_template('form.html')
 
 if __name__ == '__main__':
